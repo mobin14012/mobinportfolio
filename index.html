@@ -4,199 +4,243 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Al Mobin Talukder — AI/ML Engineer & Full-Stack Developer</title>
-<meta name="description" content="Al Mobin Talukder — Computer Science & Engineering student at MIST, building AI-powered products and full-stack applications.">
+<meta name="description" content="Al Mobin Talukder — CSE student at MIST building AI-powered products, LLM apps, and full-stack software.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ffffff;
-    --surface:#f9fafb;
-    --text:#111827;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-    --accent:#111827;
-    --link:#1d4ed8;
-    --maxw:880px;
-    --radius:10px;
+    --paper:#f7f8fc;
+    --surface:#ffffff;
+    --ink:#0e1b33;
+    --ink-2:#33415e;
+    --muted:#64708a;
+    --line:#e2e8f4;
+    --accent:#1e40af;
+    --accent-2:#3b82f6;
+    --accent-soft:#e8eefc;
+    --gold:#b9975b;
+    --navy:#0e1b33;
+    --maxw:1080px;
+    --radius:16px;
+    --shadow:0 24px 60px -28px rgba(14,27,51,.22);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    font-size:16px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3{margin:0;line-height:1.25;letter-spacing:-0.02em;}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.02em;margin:0;line-height:1.15;}
   p{margin:0;}
-  a{color:inherit;}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:4px;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px;}
+  .mono{font-family:'JetBrains Mono',monospace;}
 
-  /* Nav */
-  header{
+  /* Top bar */
+  .topbar{background:var(--navy);color:#cdd7ee;font-size:12.5px;}
+  .topbar-inner{max-width:var(--maxw);margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .topbar a{color:#fff;text-decoration:none;}
+  .topbar a:hover{text-decoration:underline;}
+
+  header.nav{
     position:sticky;top:0;z-index:50;
-    background:rgba(255,255,255,.92);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
+    background:rgba(247,248,252,.88);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
   }
-  .nav-inner{
-    max-width:var(--maxw);margin:0 auto;
-    padding:14px 24px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px;
-  }
-  .brand{font-weight:700;font-size:15.5px;letter-spacing:-0.01em;text-decoration:none;}
-  .brand span{color:var(--muted);font-weight:400;}
-  nav.links{display:flex;gap:24px;font-size:14px;color:var(--muted);}
-  nav.links a{text-decoration:none;transition:color .15s ease;}
-  nav.links a:hover{color:var(--text);}
-  .nav-right{display:flex;align-items:center;gap:12px;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    font-size:14px;font-weight:500;text-decoration:none;
-    padding:9px 18px;border-radius:7px;
-    border:1px solid transparent;cursor:pointer;
-    transition:background .15s ease,border-color .15s ease;
-    white-space:nowrap;
-  }
-  .btn-dark{background:var(--accent);color:#fff;}
-  .btn-dark:hover{background:#1f2937;}
-  .btn-outline{border-color:var(--border);color:var(--text);background:#fff;}
-  .btn-outline:hover{border-color:#9ca3af;}
-  .btn-sm{padding:8px 14px;font-size:13.5px;}
-  .burger{display:none;background:#fff;border:1px solid var(--border);border-radius:7px;width:36px;height:36px;font-size:17px;cursor:pointer;color:var(--text);}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{text-decoration:none;display:flex;align-items:center;gap:12px;}
+  .brand-mark{width:36px;height:36px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:16px;}
+  .brand-text{line-height:1.2;}
+  .brand-text strong{display:block;font-size:14.5px;}
+  .brand-text small{font-size:12px;color:var(--muted);}
+  nav.links{display:flex;gap:26px;font-size:14px;color:var(--ink-2);}
+  nav.links a{text-decoration:none;position:relative;padding:4px 0;}
+  nav.links a:hover{color:var(--accent);}
+  nav.links a.active{color:var(--accent);font-weight:600;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;text-decoration:none;padding:11px 20px;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;white-space:nowrap;}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 12px 26px -14px rgba(30,64,175,.6);}
+  .btn-primary:hover{background:#1a3795;transform:translateY(-1px);}
+  .btn-outline{background:#fff;border-color:var(--line);color:var(--ink);}
+  .btn-outline:hover{border-color:var(--accent);transform:translateY(-1px);}
+  .btn-light{background:#fff;color:var(--navy);}
+  .btn-ghost-light{border-color:rgba(255,255,255,.3);color:#fff;}
+  .burger{display:none;background:#fff;border:1px solid var(--line);border-radius:8px;width:38px;height:38px;font-size:18px;cursor:pointer;}
 
-  /* Layout */
   main{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
-  section{padding:64px 0;border-top:1px solid var(--border);}
-  section:first-of-type{border-top:none;}
-  .label{
-    font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--muted);margin:0 0 12px;
-  }
-  h2.section-title{font-size:24px;font-weight:700;margin-bottom:8px;}
-  .section-sub{color:var(--muted);font-size:15px;max-width:600px;margin-bottom:32px;}
+  section{padding:72px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:36px;flex-wrap:wrap;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);display:inline-block;border-radius:2px;}
+  .sec-title{font-size:clamp(26px,3.4vw,38px);max-width:600px;}
+  .sec-sub{color:var(--muted);max-width:560px;margin-top:10px;font-size:15.5px;}
 
   /* Hero */
-  .hero{padding:64px 0 56px;border-top:none;display:flex;gap:28px;align-items:flex-start;}
-  .hero img{
-    width:104px;height:104px;border-radius:50%;object-fit:cover;flex-shrink:0;
-    border:1px solid var(--border);
-  }
-  .hero h1{font-size:clamp(28px,4vw,36px);font-weight:700;}
-  .hero .role{margin-top:6px;font-size:16px;color:var(--muted);}
-  .hero .meta{margin-top:6px;font-size:14px;color:var(--muted);}
-  .hero .summary{margin-top:16px;font-size:15.5px;color:#374151;max-width:620px;}
-  .hero-cta{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
-  .text-links{display:flex;gap:18px;margin-left:4px;font-size:14px;font-weight:500;}
-  .text-links a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;}
-  .text-links a:hover{border-color:var(--text);}
-  .availability{
-    margin-top:22px;display:inline-flex;align-items:center;gap:8px;
-    font-size:13.5px;color:var(--muted);
-    border:1px solid var(--border);background:var(--surface);
-    padding:7px 13px;border-radius:999px;
-  }
-  .dot{width:7px;height:7px;border-radius:50%;background:#16a34a;flex-shrink:0;}
+  .hero{padding:56px 0 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .hero-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+  .hero-card::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--gold));}
+  .hero-card img{width:100%;aspect-ratio:4/4.4;object-fit:cover;border-radius:12px;display:block;background:#dbe3f3;}
+  .hero-card-footer{display:flex;align-items:center;justify-content:space-between;padding:14px 8px 6px;gap:12px;}
+  .hero-card-footer strong{font-size:14.5px;display:block;}
+  .hero-card-footer small{font-size:12.5px;color:var(--muted);}
+  .cred{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:#15803d;background:#eaf7ee;border:1px solid #bbe6c6;padding:6px 11px;border-radius:999px;white-space:nowrap;}
+  .cred i{width:7px;height:7px;border-radius:50%;background:#16a34a;display:inline-block;}
+  .hero h1{font-size:clamp(34px,4.8vw,54px);}
+  .hero h1 em{font-style:italic;color:var(--accent);}
+  .hero .role{margin-top:14px;font-size:16px;color:var(--ink-2);font-weight:500;}
+  .hero .summary{margin-top:14px;color:var(--muted);font-size:16px;max-width:540px;}
+  .hero-cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .hero-links{display:flex;gap:18px;font-size:14px;font-weight:600;margin-top:2px;}
+  .hero-links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);}
+  .hero-links a:hover{border-color:var(--ink);}
+  .stats{margin-top:32px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:#fff;border-radius:14px;overflow:hidden;}
+  .stat{padding:16px 14px;text-align:center;border-left:1px solid var(--line);}
+  .stat:first-child{border-left:none;}
+  .stat strong{font-family:'Fraunces',serif;font-size:22px;display:block;}
+  .stat span{font-size:12px;color:var(--muted);}
+
+  /* Logos / trust */
+  .trust{padding:0 0 8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted);}
+  .trust .pill{background:#fff;border:1px solid var(--line);padding:7px 13px;border-radius:999px;}
 
   /* About */
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
-  .facts{border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;background:var(--surface);align-self:start;}
-  .facts dl{margin:0;display:grid;grid-template-columns:110px 1fr;row-gap:10px;font-size:14px;}
-  .facts dt{color:var(--muted);}
-  .facts dd{margin:0;font-weight:500;}
-  .about-text p{font-size:15.5px;color:#374151;margin-bottom:14px;}
-  .about-text p:last-child{margin-bottom:0;}
+  .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;}
+  .about-grid .lead{font-family:'Fraunces',serif;font-size:21px;line-height:1.45;}
+  .about-grid .lead span{color:var(--accent);}
+  .about-grid p.body{color:var(--ink-2);font-size:15px;margin-top:16px;}
+  .checklist{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:12px;font-size:14.5px;}
+  .checklist li{display:flex;gap:10px;align-items:flex-start;}
+  .check{width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px;}
+  .facts{background:var(--navy);color:#d7e0f5;border-radius:var(--radius);padding:30px;position:relative;overflow:hidden;}
+  .facts::after{content:"";position:absolute;width:280px;height:280px;right:-80px;top:-80px;background:radial-gradient(circle,rgba(59,130,246,.35),transparent 65%);}
+  .facts h3{font-size:19px;color:#fff;margin-bottom:18px;position:relative;}
+  .facts dl{margin:0;display:grid;gap:14px;position:relative;}
+  .facts .row{display:flex;justify-content:space-between;gap:14px;font-size:14px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:12px;}
+  .facts .row:last-child{border:none;padding:none;}
+  .facts dt{color:#93a2c4;}
+  .facts dd{margin:0;color:#fff;font-weight:500;text-align:right;}
 
-  /* Projects */
-  .project-list{display:flex;flex-direction:column;}
-  .project{
-    padding:24px 0;border-top:1px solid var(--border);
-    display:grid;grid-template-columns:1fr auto;gap:6px 20px;
-  }
-  .project:first-child{border-top:none;padding-top:0;}
-  .project:last-child{padding-bottom:0;}
-  .project h3{font-size:17px;font-weight:600;}
-  .project h3 a{text-decoration:none;}
-  .project h3 a:hover{text-decoration:underline;}
-  .project .year{font-size:13px;color:var(--muted);white-space:nowrap;padding-top:3px;}
-  .project .tag{font-size:12.5px;color:var(--muted);margin-top:2px;}
-  .project p.desc{grid-column:1 / -1;font-size:14.5px;color:#4b5563;margin-top:4px;max-width:680px;}
-  .project .tech{grid-column:1 / -1;font-size:13px;color:var(--muted);margin-top:8px;}
-  .project .tech span + span::before{content:" · ";color:#9ca3af;}
-  .project a.code{grid-column:1 / -1;font-size:13.5px;font-weight:500;color:var(--link);text-decoration:none;margin-top:8px;display:inline-block;}
-  .project a.code:hover{text-decoration:underline;}
+  /* Featured projects */
+  #work{background:transparent;}
+  .featured{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px;}
+  .feat-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease;}
+  .feat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .feat-top{padding:22px 24px 0;display:flex;justify-content:space-between;align-items:center;}
+  .feat-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);padding:5px 10px;border-radius:999px;}
+  .feat-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);}
+  .feat-card h3{font-size:23px;padding:14px 24px 0;}
+  .feat-card h3 a{text-decoration:none;color:inherit;}
+  .feat-card h3 a:hover{color:var(--accent);}
+  .feat-card p{padding:10px 24px 0;color:var(--muted);font-size:14.5px;}
+  .feat-tech{display:flex;flex-wrap:wrap;gap:8px;padding:16px 24px 0;}
+  .feat-tech span{font-size:12.5px;background:#f1f5fd;border:1px solid var(--line);padding:5px 10px;border-radius:7px;color:var(--ink-2);}
+  .feat-foot{margin-top:auto;padding:18px 24px 22px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:20px;}
+  .feat-foot a{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;}
+  .feat-foot a:hover{text-decoration:underline;}
+  .grid4{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .mini-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease;}
+  .mini-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+  .mini-card h3{font-size:18px;}
+  .mini-card h3 a{text-decoration:none;color:inherit;}
+  .mini-card h3 a:hover{color:var(--accent);}
+  .mini-card p{font-size:14px;color:var(--muted);margin-top:8px;flex-grow:1;}
+  .mini-card .feat-tech{padding:14px 0 0;}
+
+  /* Process */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;position:relative;}
+  .step b.num{font-family:'Fraunces',serif;font-size:28px;color:var(--accent-soft);color:#c7d7f8;display:block;line-height:1;}
+  .step h3{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;margin:12px 0 6px;letter-spacing:0;}
+  .step p{font-size:13.5px;color:var(--muted);}
 
   /* Skills */
-  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
-  .skill-cell{background:#fff;padding:20px 22px;}
-  .skill-cell h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;}
-  .skill-cell p{font-size:14.5px;color:var(--text);}
+  .skills-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+  .skill{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;}
+  .skill-icon{width:38px;height:38px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:14px;}
+  .skill h3{font-family:'Inter',sans-serif;font-size:14.5px;font-weight:700;letter-spacing:0;margin-bottom:8px;}
+  .skill p{font-size:13.5px;color:var(--muted);}
 
-  /* Education */
-  .edu-item{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-top:1px solid var(--border);}
-  .edu-item:first-of-type{border-top:none;padding-top:0;}
-  .edu-item:last-child{padding-bottom:0;}
-  .edu-item h3{font-size:16px;font-weight:600;}
-  .edu-item .degree{font-size:14.5px;color:#374151;margin-top:4px;}
-  .edu-item .detail{font-size:13.5px;color:var(--muted);margin-top:2px;}
-  .edu-item .date{font-size:13px;color:var(--muted);white-space:nowrap;}
+  /* Timeline */
+  .timeline{position:relative;margin-top:8px;}
+  .tl-item{display:grid;grid-template-columns:120px 24px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line);}
+  .tl-item:first-child{padding-top:0;}
+  .tl-item:last-child{border:none;padding-bottom:0;}
+  .tl-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);padding-top:4px;}
+  .tl-dot{width:12px;height:12px;border-radius:50%;background:var(--accent);margin-top:6px;box-shadow:0 0 0 5px var(--accent-soft);}
+  .tl-item h3{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;letter-spacing:0;}
+  .tl-item p{font-size:14px;color:var(--muted);margin-top:6px;max-width:640px;}
 
   /* Contact */
-  .contact-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;text-align:left;}
-  .contact-box h2{font-size:22px;margin-bottom:8px;}
-  .contact-box p{color:var(--muted);font-size:15px;max-width:520px;margin-bottom:20px;}
-  .contact-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .cta{background:var(--navy);border-radius:20px;padding:48px;color:#fff;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;position:relative;overflow:hidden;}
+  .cta::before{content:"";position:absolute;width:420px;height:420px;left:-120px;bottom:-160px;background:radial-gradient(circle,rgba(59,130,246,.28),transparent 65%);}
+  .cta::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--accent-2),var(--accent));}
+  .cta h2{font-size:clamp(26px,3.4vw,36px);color:#fff;position:relative;}
+  .cta p{color:#a9b7d6;margin-top:12px;font-size:15px;position:relative;}
+  .cta-actions{display:flex;flex-direction:column;gap:12px;position:relative;}
+  .cta-actions .btn{justify-content:center;}
+  .cta-small{font-size:13px;color:#8fa0c2;text-align:center;}
 
-  footer{
-    max-width:var(--maxw);margin:0 auto;padding:28px 24px 40px;
-    border-top:1px solid var(--border);margin-top:16px;
-    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
-    font-size:13px;color:var(--muted);
-  }
+  footer{max-width:var(--maxw);margin:0 auto;padding:28px 24px 44px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:8px;}
   footer a{color:var(--muted);text-decoration:none;}
-  footer a:hover{color:var(--text);}
+  footer a:hover{color:var(--ink);}
 
-  @media (max-width:700px){
-    nav.links{
-      display:none;position:absolute;top:100%;left:0;right:0;
-      background:#fff;border-bottom:1px solid var(--border);
-      flex-direction:column;padding:12px 24px 18px;gap:14px;
-    }
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;gap:28px;}
+    .hero-card{max-width:420px;}
+    .about-grid,.featured,.grid4,.cta{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:1fr 1fr;}
+    .skills-wrap{grid-template-columns:1fr 1fr;}
+    .stats{grid-template-columns:1fr 1fr;}
+    .stat:nth-child(3){border-left:none;border-top:1px solid var(--line);}
+    .stat:nth-child(4){border-top:1px solid var(--line);}
+    .stat:nth-child(2){border-top:none;}
+  }
+  @media (max-width:640px){
+    nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:14px 24px 20px;border-bottom:1px solid var(--line);gap:14px;}
     nav.links.open{display:flex;}
     .burger{display:block;}
-    .nav-right .btn{display:none;}
-    .hero{flex-direction:column;gap:18px;padding:48px 0 40px;}
-    .hero img{width:84px;height:84px;}
-    section{padding:48px 0;}
-    .about-grid,.skills-grid{grid-template-columns:1fr;}
-    .skills-grid{gap:1px;}
-    .project{grid-template-columns:1fr;}
-    .project .year{padding-top:0;}
-    .edu-item{flex-direction:column;gap:6px;}
+    .nav-inner .btn{display:none;}
+    section{padding:52px 0;}
+    .process-grid,.skills-wrap{grid-template-columns:1fr;}
+    .tl-item{grid-template-columns:1fr;gap:6px;}
+    .tl-dot{display:none;}
+    .cta{padding:32px 24px;}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
   }
 </style>
 </head>
 <body>
 
-<header>
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="mono">DHAKA, BD · UTC+6 · OPEN TO INTERNSHIPS</span>
+    <span><a href="mailto:mobintalukder71@gmail.com">mobintalukder71@gmail.com</a></span>
+  </div>
+</div>
+
+<header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="#top">Al Mobin Talukder <span>— Portfolio</span></a>
+    <a class="brand" href="#top">
+      <span class="brand-mark">M</span>
+      <span class="brand-text"><strong>Al Mobin Talukder</strong><small>AI/ML · Full-Stack</small></span>
+    </a>
     <nav class="links" id="navLinks" aria-label="Primary">
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="nav-right">
-      <a class="btn btn-dark btn-sm" href="mailto:mobintalukder71@gmail.com">Email me</a>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a class="btn btn-primary" style="padding:9px 16px;" href="#contact">Hire me</a>
       <button class="burger" id="navBurger" aria-label="Open menu">≡</button>
     </div>
   </div>
@@ -204,156 +248,177 @@
 
 <main id="top">
 
-  <!-- Hero -->
   <div class="hero">
-    <img src="profile.jpg" alt="Portrait of Al Mobin Talukder">
     <div>
-      <h1>Al Mobin Talukder</h1>
-      <p class="role">AI/ML Engineer &amp; Full-Stack Developer</p>
-      <p class="meta">Dhaka, Bangladesh · BSc CSE, Military Institute of Science and Technology (MIST)</p>
-      <p class="summary">I build AI-powered products end to end — from data pipelines and LLM integration to full-stack apps people can actually use. Currently focused on applied LLMs, automation, and clean, maintainable software.</p>
+      <p class="eyebrow">AI/ML Engineer · CSE @ MIST</p>
+      <h1>Building AI products with <em>engineering rigor.</em></h1>
+      <p class="role">Al Mobin Talukder — Full-Stack Developer specializing in applied LLMs</p>
+      <p class="summary">I design data pipelines, integrate LLMs (Gemini, GPT, Claude), and ship full-stack apps people actually use — from study tools to research intelligence systems and automation workflows.</p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-dark">View projects</a>
-        <a href="#contact" class="btn btn-outline">Contact</a>
-        <div class="text-links">
-          <a href="https://github.com/mobin14012" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/al-mobin-talukder-799893323/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        </div>
+        <a href="#work" class="btn btn-primary">View selected work →</a>
+        <a href="https://github.com/mobin14012" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
       </div>
-      <div class="availability"><span class="dot"></span>Available for AI/ML internships</div>
+      <div class="hero-links" style="margin-top:16px;">
+        <a href="https://www.linkedin.com/in/al-mobin-talukder-799893323/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:mobintalukder71@gmail.com">Email me →</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>6+</strong><span>Shipped projects</span></div>
+        <div class="stat"><strong>3</strong><span>LLM families used</span></div>
+        <div class="stat"><strong>4</strong><span>Stacks · Web to mobile</span></div>
+        <div class="stat"><strong>MIST</strong><span>BSc CSE · Dhaka</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="profile.jpg" alt="Portrait of Al Mobin Talukder">
+      <div class="hero-card-footer">
+        <div><strong>Al Mobin Talukder</strong><small>Dhaka, Bangladesh · UTC+6</small></div>
+        <span class="cred"><i></i>Available now</span>
+      </div>
     </div>
   </div>
 
-  <!-- About -->
-  <section id="about">
-    <p class="label">About</p>
-    <h2 class="section-title">Background</h2>
-    <p class="section-sub">CSE student focused on practical AI systems and full-stack delivery.</p>
+  <div class="trust mono">
+    <span>TRUSTED STACK →</span>
+    <span class="pill">Next.js</span><span class="pill">Python</span><span class="pill">Gemini · GPT · Claude</span><span class="pill">MongoDB</span><span class="pill">n8n Automation</span>
+  </div>
+
+  <section id="about" class="reveal">
+    <div class="sec-head">
+      <div><p class="eyebrow">01 — About</p><h2 class="sec-title">Engineer first, AI specialist by practice.</h2></div>
+    </div>
     <div class="about-grid">
-      <div class="about-text">
-        <p>I work across the stack: Python and data pipelines on one end, Next.js / Node / Flutter apps on the other, with LLM APIs (Gemini, GPT, Claude) in the middle to handle extraction, classification, and generation.</p>
-        <p>My approach is simple — take an unclear problem, structure the data, build a working product, then automate it so it keeps running reliably. I care about readable code, clear documentation, and shipping.</p>
+      <div class="panel">
+        <p class="lead">I don't just plug in an API key — I build the <span>system around it</span>: ingestion, evaluation, product, and automation.</p>
+        <p class="body">CSE undergraduate at the Military Institute of Science and Technology. I work across Python pipelines, Next.js / Node backends, and Flutter frontends, with LLMs handling extraction, classification, and generation in the middle.</p>
+        <ul class="checklist">
+          <li><span class="check">✓</span>End-to-end delivery — from messy input to deployed product</li>
+          <li><span class="check">✓</span>LLM integration with auth, uploads, and analytics</li>
+          <li><span class="check">✓</span>Automation with n8n, jobs, and scheduled workflows</li>
+        </ul>
       </div>
       <div class="facts">
+        <h3>At a glance</h3>
         <dl>
-          <dt>Focus</dt><dd>AI/ML &amp; Automation</dd>
-          <dt>Education</dt><dd>BSc CSE, MIST</dd>
-          <dt>Location</dt><dd>Dhaka, Bangladesh</dd>
-          <dt>Status</dt><dd>Open to internships</dd>
-          <dt>Email</dt><dd>mobintalukder71@gmail.com</dd>
+          <div class="row"><dt>Focus</dt><dd>AI/ML &amp; Automation</dd></div>
+          <div class="row"><dt>Education</dt><dd>BSc CSE, MIST</dd></div>
+          <div class="row"><dt>Location</dt><dd>Dhaka, Bangladesh</dd></div>
+          <div class="row"><dt>Status</dt><dd>Open to internships</dd></div>
+          <div class="row"><dt>Contact</dt><dd>mobintalukder71@gmail.com</dd></div>
         </dl>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <p class="label">Selected work</p>
-    <h2 class="section-title">Projects</h2>
-    <p class="section-sub">Six projects covering AI apps, data pipelines, and developer tooling.</p>
-    <div class="project-list">
+  <section id="work" class="reveal">
+    <div class="sec-head">
+      <div><p class="eyebrow">02 — Selected work</p><h2 class="sec-title">Projects with real users in mind.</h2><p class="sec-sub">AI apps, data pipelines, and tooling — each one shipped to GitHub with docs.</p></div>
+      <a href="https://github.com/mobin14012" target="_blank" rel="noopener" class="btn btn-outline">All repos ↗</a>
+    </div>
 
-      <article class="project">
+    <div class="featured">
+      <article class="feat-card">
+        <div class="feat-top"><span class="feat-tag">AI · FULL-STACK · FEATURED</span><span class="feat-num">01</span></div>
         <h3><a href="https://github.com/mobin14012/smart-syllabus" target="_blank" rel="noopener">Smart Syllabus</a></h3>
-        <span class="year">AI · Full-Stack</span>
-        <p class="desc">Converts unstructured study material into organized, trackable topics with JWT auth, file uploads, AI-based topic extraction, and real-time progress tracking.</p>
-        <p class="tech"><span>Next.js</span><span>Express</span><span>MongoDB</span><span>Gemini API</span></p>
-        <a class="code" href="https://github.com/mobin14012/smart-syllabus" target="_blank" rel="noopener">View code →</a>
+        <p>Turns unstructured notes into organized, trackable topics — JWT auth, file uploads, Gemini-powered extraction, and live progress tracking.</p>
+        <div class="feat-tech"><span>Next.js</span><span>Express</span><span>MongoDB</span><span>Gemini API</span></div>
+        <div class="feat-foot"><a href="https://github.com/mobin14012/smart-syllabus" target="_blank" rel="noopener">View code →</a><span class="mono" style="font-size:12px;color:var(--muted);">Full-stack</span></div>
       </article>
-
-      <article class="project">
-        <h3><a href="https://github.com/mobin14012/StudyAI" target="_blank" rel="noopener">StudyAI</a></h3>
-        <span class="year">AI · EdTech</span>
-        <p class="desc">Adaptive learning platform — upload course material to generate exam-style practice questions, with session tracking and progress analytics.</p>
-        <p class="tech"><span>TypeScript</span><span>LLM API</span><span>Analytics</span></p>
-        <a class="code" href="https://github.com/mobin14012/StudyAI" target="_blank" rel="noopener">View code →</a>
-      </article>
-
-      <article class="project">
+      <article class="feat-card">
+        <div class="feat-top"><span class="feat-tag">AI · DATA PIPELINE · FEATURED</span><span class="feat-num">02</span></div>
         <h3><a href="https://github.com/mobin14012/ai-professor-crm" target="_blank" rel="noopener">AI Professor CRM</a></h3>
-        <span class="year">AI · Data Pipeline</span>
-        <p class="desc">OpenAlex-powered pipeline that discovers and enriches AI/ML researchers by university — 33-field output with papers, co-authors, DOI links, and AI-written summaries.</p>
-        <p class="tech"><span>Python</span><span>OpenAlex API</span><span>Data Enrichment</span></p>
-        <a class="code" href="https://github.com/mobin14012/ai-professor-crm" target="_blank" rel="noopener">View code →</a>
+        <p>OpenAlex pipeline that discovers AI/ML researchers by university — 33 fields with papers, co-authors, DOIs, and AI-written outreach angles.</p>
+        <div class="feat-tech"><span>Python</span><span>OpenAlex API</span><span>Enrichment</span></div>
+        <div class="feat-foot"><a href="https://github.com/mobin14012/ai-professor-crm" target="_blank" rel="noopener">View code →</a><span class="mono" style="font-size:12px;color:var(--muted);">Python</span></div>
       </article>
+    </div>
 
-      <article class="project">
-        <h3><a href="https://github.com/mobin14012/facebook-keyword-filter-extension" target="_blank" rel="noopener">Facebook Keyword Filter</a></h3>
-        <span class="year">Browser Extension</span>
-        <p class="desc">Chrome extension that filters unwanted posts and videos by keyword, using real-time DOM monitoring with a lightweight UI.</p>
-        <p class="tech"><span>JavaScript</span><span>Chrome APIs</span><span>MutationObserver</span></p>
-        <a class="code" href="https://github.com/mobin14012/facebook-keyword-filter-extension" target="_blank" rel="noopener">View code →</a>
+    <div class="grid4">
+      <article class="mini-card">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.08em;">03 · AI · EDTECH</span>
+        <h3 style="margin-top:8px;"><a href="https://github.com/mobin14012/StudyAI" target="_blank" rel="noopener">StudyAI</a></h3>
+        <p>Adaptive learning platform — upload material, get exam-style questions, track sessions and analytics.</p>
+        <div class="feat-tech"><span>TypeScript</span><span>LLM API</span><span>Analytics</span></div>
+        <p style="margin-top:12px;"><a href="https://github.com/mobin14012/StudyAI" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none;">View code →</a></p>
       </article>
-
-      <article class="project">
-        <h3><a href="https://github.com/mobin14012/SmartPdfEditor" target="_blank" rel="noopener">SmartPdfEditor</a></h3>
-        <span class="year">Tooling</span>
-        <p class="desc">Browser-based tool for quick PDF edits and organization — no heavy desktop software required.</p>
-        <p class="tech"><span>JavaScript</span><span>PDF Tooling</span></p>
-        <a class="code" href="https://github.com/mobin14012/SmartPdfEditor" target="_blank" rel="noopener">View code →</a>
+      <article class="mini-card">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.08em;">04 · EXTENSION</span>
+        <h3 style="margin-top:8px;"><a href="https://github.com/mobin14012/facebook-keyword-filter-extension" target="_blank" rel="noopener">Facebook Keyword Filter</a></h3>
+        <p>Chrome extension blocking unwanted posts by keyword — MutationObserver + distraction-free UI.</p>
+        <div class="feat-tech"><span>JavaScript</span><span>Chrome APIs</span></div>
+        <p style="margin-top:12px;"><a href="https://github.com/mobin14012/facebook-keyword-filter-extension" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none;">View code →</a></p>
       </article>
-
-      <article class="project">
-        <h3><a href="https://github.com/mobin14012/result-app" target="_blank" rel="noopener">Result App</a></h3>
-        <span class="year">Systems</span>
-        <p class="desc">Centralized result-checking platform for SSC, HSC, JSC, PSC, and admission exams — one interface instead of scattered result sites.</p>
-        <p class="tech"><span>C++</span><span>Data Structures</span></p>
-        <a class="code" href="https://github.com/mobin14012/result-app" target="_blank" rel="noopener">View code →</a>
+      <article class="mini-card">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.08em;">05 · TOOLING</span>
+        <h3 style="margin-top:8px;"><a href="https://github.com/mobin14012/SmartPdfEditor" target="_blank" rel="noopener">SmartPdfEditor</a></h3>
+        <p>Browser-based PDF editing and organizing — fast edits without desktop software.</p>
+        <div class="feat-tech"><span>JavaScript</span><span>PDF Tooling</span></div>
+        <p style="margin-top:12px;"><a href="https://github.com/mobin14012/SmartPdfEditor" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none;">View code →</a></p>
       </article>
-
+      <article class="mini-card">
+        <span class="mono" style="font-size:11px;color:var(--accent);letter-spacing:.08em;">06 · SYSTEMS</span>
+        <h3 style="margin-top:8px;"><a href="https://github.com/mobin14012/result-app" target="_blank" rel="noopener">Result App</a></h3>
+        <p>Centralized SSC / HSC / JSC / PSC result checking — one interface, no scattered sites.</p>
+        <div class="feat-tech"><span>C++</span><span>Data Structures</span></div>
+        <p style="margin-top:12px;"><a href="https://github.com/mobin14012/result-app" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none;">View code →</a></p>
+      </article>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <p class="label">Toolkit</p>
-    <h2 class="section-title">Skills</h2>
-    <p class="section-sub">Languages, frameworks, and tools I use regularly.</p>
-    <div class="skills-grid">
-      <div class="skill-cell"><h3>Languages</h3><p>Python, C++, Java, JavaScript, TypeScript, Dart</p></div>
-      <div class="skill-cell"><h3>Frameworks</h3><p>Next.js, Node.js, Express, Flutter</p></div>
-      <div class="skill-cell"><h3>AI / LLMs</h3><p>Gemini, GPT, Claude, prompt-based workflows</p></div>
-      <div class="skill-cell"><h3>Automation</h3><p>n8n, email automation, social automation</p></div>
-      <div class="skill-cell"><h3>Platforms</h3><p>GitHub, Firebase, Vercel</p></div>
-      <div class="skill-cell"><h3>Foundations</h3><p>Data structures &amp; algorithms, API design, databases</p></div>
+  <section id="process" class="reveal">
+    <div class="sec-head">
+      <div><p class="eyebrow">03 — Process</p><h2 class="sec-title">From messy input to running product.</h2></div>
+    </div>
+    <div class="process-grid">
+      <div class="step"><b class="num">01</b><h3>Ingest</h3><p>Structure notes, PDFs, feeds, and result pages into clean data.</p></div>
+      <div class="step"><b class="num">02</b><h3>Understand</h3><p>Wire in Gemini / GPT / Claude to extract and reason.</p></div>
+      <div class="step"><b class="num">03</b><h3>Build</h3><p>Ship with Next.js, Node, or Flutter — usable, not a notebook.</p></div>
+      <div class="step"><b class="num">04</b><h3>Automate</h3><p>n8n and jobs keep it running without manual work.</p></div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section id="education">
-    <p class="label">Education &amp; activity</p>
-    <h2 class="section-title">Education</h2>
-    <p class="section-sub">Study and community involvement.</p>
-    <div>
-      <div class="edu-item">
-        <div>
-          <h3>Military Institute of Science and Technology (MIST)</h3>
-          <p class="degree">BSc in Computer Science &amp; Engineering</p>
-          <p class="detail">Dhaka, Bangladesh</p>
-        </div>
-        <span class="date">2022 — Present</span>
+  <section id="skills" class="reveal">
+    <div class="sec-head">
+      <div><p class="eyebrow">04 — Capabilities</p><h2 class="sec-title">A toolkit built for shipping.</h2></div>
+    </div>
+    <div class="skills-wrap">
+      <div class="skill"><div class="skill-icon">◈</div><h3>Languages</h3><p>Python, C++, Java, JavaScript, TypeScript, Dart</p></div>
+      <div class="skill"><div class="skill-icon">⬣</div><h3>Frameworks</h3><p>Next.js, Node.js, Express, Flutter</p></div>
+      <div class="skill"><div class="skill-icon">✦</div><h3>AI / LLMs</h3><p>Gemini, GPT, Claude, prompt workflows</p></div>
+      <div class="skill"><div class="skill-icon">⚙</div><h3>Automation</h3><p>n8n, email &amp; social automation</p></div>
+      <div class="skill"><div class="skill-icon">☁</div><h3>Platforms</h3><p>GitHub, Firebase, Vercel</p></div>
+      <div class="skill"><div class="skill-icon">❖</div><h3>Foundations</h3><p>DSA, API design, databases</p></div>
+    </div>
+  </section>
+
+  <section id="education" class="reveal">
+    <div class="sec-head">
+      <div><p class="eyebrow">05 — Journey</p><h2 class="sec-title">Education &amp; activity.</h2></div>
+    </div>
+    <div class="panel timeline">
+      <div class="tl-item">
+        <span class="tl-date">2022 — PRESENT</span><span class="tl-dot"></span>
+        <div><h3>Military Institute of Science and Technology (MIST)</h3><p>BSc in Computer Science &amp; Engineering — Dhaka, Bangladesh. Focus on AI/ML systems, full-stack development, and automation.</p></div>
       </div>
-      <div class="edu-item">
-        <div>
-          <h3>AI &amp; API Prime — BUET CSE Fest 2026</h3>
-          <p class="degree">Hackathon participant</p>
-          <p class="detail">Built and shipped under time pressure alongside CSE teams from across Bangladesh.</p>
-        </div>
-        <span class="date">2026</span>
+      <div class="tl-item">
+        <span class="tl-date">2026 · HACKATHON</span><span class="tl-dot"></span>
+        <div><h3>AI &amp; API Prime — BUET CSE Fest 2026</h3><p>Built and shipped under time pressure alongside CSE teams from across Bangladesh.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="contact-box">
-      <p class="label">Contact</p>
-      <h2>Open to internships and collaborations.</h2>
-      <p>Based in Dhaka, Bangladesh. Fastest response by email — happy to walk through any project in more depth.</p>
-      <div class="contact-actions">
-        <a class="btn btn-dark" href="mailto:mobintalukder71@gmail.com">mobintalukder71@gmail.com</a>
-        <a class="btn btn-outline" href="https://github.com/mobin14012" target="_blank" rel="noopener">GitHub ↗</a>
-        <a class="btn btn-outline" href="https://www.linkedin.com/in/al-mobin-talukder-799893323/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  <section id="contact" class="reveal">
+    <div class="cta">
+      <div>
+        <p class="eyebrow" style="color:#9db4e8;">06 — Contact</p>
+        <h2>Let's build something that lasts.</h2>
+        <p>Open to AI/ML internships and collaborations. Based in Dhaka — I reply fastest by email and can walk through any project in depth.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-light" href="mailto:mobintalukder71@gmail.com">mobintalukder71@gmail.com</a>
+        <a class="btn btn-ghost-light" href="https://github.com/mobin14012" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn btn-ghost-light" href="https://www.linkedin.com/in/al-mobin-talukder-799893323/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <span class="cta-small">Typically replies within 24 hours</span>
       </div>
     </div>
   </section>
@@ -361,7 +426,7 @@
 </main>
 
 <footer>
-  <span>© 2026 Al Mobin Talukder</span>
+  <span>© 2026 Al Mobin Talukder · Dhaka, Bangladesh</span>
   <span><a href="https://github.com/mobin14012" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/al-mobin-talukder-799893323/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:mobintalukder71@gmail.com">Email</a></span>
 </footer>
 
@@ -370,6 +435,22 @@
   const navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const sections = [...document.querySelectorAll('main section[id]')];
+  const links = [...document.querySelectorAll('nav.links a')];
+  const navObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => navObs.observe(s));
 </script>
 
 </body>
